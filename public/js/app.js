@@ -16,7 +16,7 @@ async function retrieveForecast(event) {
     form.innerHTML = '<span>Loading, please wait...</span>'
     responseCard.style.display = 'none'
 
-    let forecast = await fetch('http://localhost:3000/weather?address=' + address.trim())
+    let forecast = await fetch('/weather?address=' + address.trim())
     let response = await forecast.json()
     
     form.innerHTML = formCopy

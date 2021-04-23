@@ -8,6 +8,9 @@ const forecast = require('./utilities/forecast')
 
 const app = express();
 
+//setup port, heroku and default
+const port = process.env.PORT || 3000
+
 // paths for express configuration
 const publicDir = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
@@ -91,6 +94,6 @@ app.get('*', (req, res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log('Server started')
+app.listen(port, () => {
+    console.log(`Server started at ${port}`)
 })
